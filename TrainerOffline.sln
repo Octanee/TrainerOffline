@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerOfflineLibrary", "TrainerOfflineLibrary\TrainerOfflineLibrary.csproj", "{C410CEDB-6652-422E-9435-C53245BD8195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTest", "DBTest\DBTest.csproj", "{C17DCF23-09C0-4B4C-B321-8F561FA2F9DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C410CEDB-6652-422E-9435-C53245BD8195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C410CEDB-6652-422E-9435-C53245BD8195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C410CEDB-6652-422E-9435-C53245BD8195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C410CEDB-6652-422E-9435-C53245BD8195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C17DCF23-09C0-4B4C-B321-8F561FA2F9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C17DCF23-09C0-4B4C-B321-8F561FA2F9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C17DCF23-09C0-4B4C-B321-8F561FA2F9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C17DCF23-09C0-4B4C-B321-8F561FA2F9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {925A29AC-0DFC-4F1D-9D6E-55CCC1E77F2A}
+	EndGlobalSection
+EndGlobal
