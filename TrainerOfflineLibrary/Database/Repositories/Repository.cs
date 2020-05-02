@@ -57,5 +57,10 @@ namespace TrainerOfflineLibrary.Database
         {
             RemoveRange(GetAll());
         }
+
+        public void Update(TEntity entity)
+        {
+            Context.Entry(entity).State = EntityState.Modified;
+        }
     }
 }

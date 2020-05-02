@@ -131,13 +131,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\GymContext.cs" />
-    <Compile Include="Database\IUnitOfWork.cs" />
+    <Compile Include="Database\Context\GymContext.cs" />
+    <Compile Include="Database\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Database\Repositories\BodyWeightLogRepository.cs" />
     <Compile Include="Database\Repositories\ExerciseRepository.cs" />
+    <Compile Include="Database\Repositories\Interfaces\IBodyWeightLogRepository.cs" />
     <Compile Include="Database\Repositories\Interfaces\IExerciseRepository.cs" />
     <Compile Include="Database\Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Database\Repositories\Interfaces\IRoutineRepository.cs" />
+    <Compile Include="Database\Repositories\Interfaces\ISetLogRepository.cs" />
+    <Compile Include="Database\Repositories\Interfaces\ISetRepository.cs" />
+    <Compile Include="Database\Repositories\Interfaces\ITrainingPlanRepository.cs" />
     <Compile Include="Database\Repositories\Repository.cs" />
-    <Compile Include="Database\UnitOfWork.cs" />
+    <Compile Include="Database\Repositories\RoutineRepository.cs" />
+    <Compile Include="Database\Repositories\SetRepository.cs" />
+    <Compile Include="Database\Repositories\TrainingPlanRepository.cs" />
+    <Compile Include="Database\Repositories\SetLogRepository.cs" />
+    <Compile Include="Database\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Enums\Bodypart.cs" />
     <Compile Include="Enums\Exercise_type.cs" />
     <Compile Include="Database\Migrations\Configuration.cs" />

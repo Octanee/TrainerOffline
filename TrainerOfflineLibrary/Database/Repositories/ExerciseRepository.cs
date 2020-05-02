@@ -16,6 +16,10 @@ namespace TrainerOfflineLibrary.Database.Repositories
         {
         }
 
+        public GymContext GymContext
+        {
+            get { return Context as GymContext; }
+        }
         public IEnumerable<Exercise> GetExercisesOfType(Exercise_type type)
         {
             return GymContext.Exercises
@@ -32,9 +36,6 @@ namespace TrainerOfflineLibrary.Database.Repositories
                 .ToList();
         }
 
-        public GymContext GymContext
-        {
-            get { return Context as GymContext; }
-        }
+
     }
 }

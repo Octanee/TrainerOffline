@@ -15,38 +15,98 @@ namespace DBTest
         {
             using (var unitOfWork = new UnitOfWork(new GymContext()))
             {
-                var temp = new Exercise { Name = "Plaska", Bodypart = Bodypart.CHEST, Exercise_type = Exercise_type.WEIGHT, Note = "Notatka" };
+                bool isWorking = true;
 
-                unitOfWork.Exercises.Add(temp);
-
-                temp = new Exercise { Name = "Przysiad", Bodypart = Bodypart.QUADRICEPS, Exercise_type = Exercise_type.WEIGHT, Note = "Notatka" };
-
-                unitOfWork.Exercises.Add(temp);
-
-                unitOfWork.Complete();
-
-                var exercises = unitOfWork.Exercises.GetAll();
-
-                
-                if (exercises.Count() > 0)
+                while (isWorking)
                 {
-                    foreach (var exercise in exercises)
+                    Console.Clear();
+                    Console.WriteLine("1. Show Exercise List");
+                    Console.WriteLine("2. Add Exercise");
+                    Console.WriteLine("3. Remove Exercise");
+                    Console.WriteLine("4. Update Exercise");
+                    Console.WriteLine("5. Clear list of Exercises");
+                    Console.WriteLine("6. Exit");
+
+                    Console.WriteLine("What you want to do?");
+
+                    string key;
+                    key = Console.ReadLine();
+                    switch (key)
                     {
-                        Console.WriteLine("ID: {0}, Name: {1} , Bodypart: {2}, Type: {3}, Note: {4}", exercise.ExcerciseID, exercise.Name, exercise.Bodypart, exercise.Exercise_type, exercise.Note);
+                        case "1":
+                            ShowExerciseList(unitOfWork);
+                            break;
+                        case "2":
+                            AddExercise(unitOfWork);
+                            break;
+                        case "3":
+                            RemoveExercise(unitOfWork);
+                            break;
+                        case "4":
+                            UpdateExercise(unitOfWork);
+                            break;
+                        case "5":
+                            ClearListOfExercises(unitOfWork);
+                            break;
+                        case "6":
+                            Exit(isWorking);
+                            break;
+                        default:
+                            Console.WriteLine("\nInvalid value..");
+                            break;
                     }
+
+                    Console.WriteLine("\nPress any button to continue...");
+                    Console.ReadKey();
                 }
-                else
-                {
-                    Console.WriteLine("List is empty.");
-                }
+            }
+        }
 
-                unitOfWork.Exercises.RemoveAll();
-                unitOfWork.Complete();
+        private static void Exit(bool isWorking)
+        {
+            isWorking = false;
+        }
 
-                Console.WriteLine("\npress any key to exit the process...");
+        private static void ClearListOfExercises(UnitOfWork unitOfWork)
+        {
+            unitOfWork.Exercises.RemoveAll();
+            unitOfWork.Save();
+        }
 
-                // basic use of "Console.ReadKey()" method 
-                Console.ReadKey();
+        private static void AddExercise(UnitOfWork unitOfWork)
+        {
+            var exercise = new Exercise();
+            Console.WriteLine("Enter the appropriate details.");
+
+            Console.WriteLine("Name: ");
+            exercise.Name = Console.ReadLine();
+
+            Console.WriteLine("Bodypart: ");
+            exercise.Bodypart = Console.ReadLine();
+
+            Console.WriteLine("Name: ");
+            exercise.Name = Console.ReadLine();
+
+            Console.WriteLine("Name: ");
+            exercise.Name = Console.ReadLine();
+        }
+
+        private static void RemoveExercise(UnitOfWork unitOfWork)
+        {
+
+        }
+
+        private static void UpdateExercise(UnitOfWork unitOfWork)
+        {
+
+        }
+
+        private static void ShowExerciseList(UnitOfWork unitOfWork)
+        {
+            var exercises = unitOfWork.Exercises.GetAll();
+            foreach (var exercise in exercises)
+            {
+                Console.WriteLine("ID: {0}, Name: {1} , Bodypart: {2}, Type: {3}, Note: {4}", exercise.ExcerciseID, exercise.Name, exercise.Bodypart, exercise.Exercise_type, exercise.Note);
             }
         }
     }
